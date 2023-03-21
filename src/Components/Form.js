@@ -1,57 +1,55 @@
-import React ,{useState} from 'react'
-import logo from '../Image/logo.png'
-import Options from './Options'
-import Input from './Input'
-function Form() {
+import React, { useState } from "react";
+import logo from "../Image/logo.png";
+import Input from "./Input";
+import Options from "./Options";
 
-    const [login,settoLogin]=useState(true)
+const Form = () => {
+  const [login, setLogin] = useState(true);
+
   return (
-    <section>
-    {/* First make a logo container */}
-    <label>
-    <img src={logo} className='logo'/>
-    <p className='logoText'>
-    SOME RANDOM TEXT, SOME RANDOM TEXT,SOME RANDOM TEXT,SOME RANDOM TEXT
-    </p>
-    </label>
+    <section className="container">
+    {/* //Header Container or logo container */}
+      <article>
+        <img src={logo} alt="logo" className="logo" />
+        <p className="logoText">
+          SOME RANDOM TEXT, SOME RANDOM TEXT,SOME RANDOM TEXT,SOME RANDOM TEXT
+        </p>
+      </article>
 
-    {/* Second We create login signup page */}
-    <label >
-    <div className="btn-container">
-          <button type="button" className={ login ? 'btn active' : 'btn'} onClick={() => settoLogin(true)}>
+{/* //Main Container of Form Container */}
+
+      <label>
+        <div className="btn-container">
+          <button type="button" className={ login ? 'btn active' : 'btn'} onClick={() => setLogin(true)}>
             Login
           </button>
-          <button type="button" className={ !login ? 'btn active' : 'btn'}  onClick={() => settoLogin(false)}>
+          <button type="button" className={ !login ? 'btn active' : 'btn'}  onClick={() => setLogin(false)}>
             Signup
           </button>
         </div>
 
-    {/* Add  Form there */}
-  <form className='form-center'>
-    <Input type='email' placeholder='Email Address'></Input>
-    <Input type='password' placeholder='Password'></Input>
-     {!login && <Input type='password' placeholder='Confirm Password'></Input>}
-     <button type="button" className="login-Button">
+
+        {/* //Main Form where user enters detail */}
+
+        <form className="form-center">
+          <Input type="email" placeholder="Email Address" />
+          <Input type="password" placeholder="Password" />
+          {!login && <Input type="password" placeholder="Confirm Password" />}
+          <button type="button" className="login-Button">
             {login ? "LOGIN" : "SIGNUP"}
           </button>
           {login && <p className="password">Forgot Password?</p>}
           <p className="loginWith">
             {login ? "or login with" : "or signup with"}
           </p>
-  </form>
+        </form>
 
-  
-{/* //Other otions */}
+{/* //Login OPtions like google facebook twitter */}
 
-<Options/>
+        <Options/>
+      </label>
+    </section>
+  );
+};
 
-    </label>
-     
-    
-   </section>
-
-   
-  )
-}
-
-export default Form
+export default Form;

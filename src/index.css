@@ -8,8 +8,7 @@
 max-width: 428px;
 max-height: 926px;
 margin: auto;
-border: 2px solid #813a3a;
-border-radius: 7px;
+box-sizing: border-box;
 }
 
 .loginForm{
@@ -36,7 +35,7 @@ border-radius: 7px;
 
 
 .btn-container{
- margin-left: 505px;
+ margin-left: 27px;
  margin-top: 45px;
 }
 
